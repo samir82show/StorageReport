@@ -3,13 +3,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
-        <h:outputScript library="js" name="script.js"/>
+        <title>My first line bar chart</title>
+        <h:outputScript library="js" name="Chart.js"/>
     </h:head>
     <h:body>
-        
-        <input type="button" onclick="getData();" value="press me!"/>
 
+        <input type="button" onclick="getData();" value="press me!"/>
+        <div id="center">
+            <canvas id="lineChart"/>
+        </div>
+        
+        <script>
+            var linechartdata = {
+                labels: ["2010", "2011", "2012", "2013"],
+                datasets: [
+                    {
+                        data: [150, 200, 250, 150]
+                    },
+                    {
+                        data: [200, 175, 150, 200]
+                    }
+                ]
+            };
+            
+        </script>
     </h:body>
 </html>
 
