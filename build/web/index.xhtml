@@ -6,6 +6,7 @@
         <title>My first line bar chart</title>
         <h:outputScript library="js" name="Chart.js"/>
         <h:outputStylesheet library="css" name="style.css"/>
+        <link rel="shortcut icon" href=""/>
     </h:head>
     <h:body>
         <div class="container">
@@ -16,11 +17,11 @@
             var chartdata = new Chart(mychart, {
                 type: "bar",
                 data: {
-                    labels: ["Banana", "Orange", "Apple", "Pinnaple"],
+                    labels: ["VMAX-3", "Isilon", "Unity", "XtremIO"],
                     datasets: [
                         {
-                            label: "Available Fruits",
-                            data: [13, 33, 55, 67],
+                            label: "Total(TBs)",
+                            data: [parseFloat(242210.9/1024).toFixed(2), 476, 94.5, 7.59],
                             backgroundColor: ['#239B56',
                                 '#239B56',
                                 '#239B56',
@@ -28,8 +29,8 @@
                             ]
                         },
                         {
-                            label: "Sold Fruits",
-                            data: [3, 10, 40, 67],
+                            label: "Free(TBs)",
+                            data: [parseFloat(160382.3/1024).toFixed(2), 476 - 83.7, 38.4, 6.5],
                             backgroundColor: ['#58D68D',
                                 '#58D68D',
                                 '#58D68D',
@@ -41,11 +42,19 @@
                 options: {
                     title: {
                         display: true,
-                        text: "Healthiest Fruits",
+                        text: "Storage Utilization Report"
                     },
                     legend: {
                         position: "right"
+                    },
+                    scales: {
+                        yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
                     }
+
 
                 }
             });
