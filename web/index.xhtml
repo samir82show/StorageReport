@@ -12,17 +12,42 @@
             <canvas id="mychart"/>
         </div>
         <script>
-            var item = document.getElementById("mychart").getContext("2d");
-            
-            var chartdata = new Chart(mychart,{
-               type: "bar",
-               data: {
-                   labels: ["Banana", "Orange", "Apple", "Pinnaple", "Kaka"],
-                   datasets: [{
-                           label: "Fruits",
-                           data: [13, 33, 55, 67]
-                   }]
-               }
+            var item = document.getElementById("mychart");
+            var chartdata = new Chart(mychart, {
+                type: "bar",
+                data: {
+                    labels: ["Banana", "Orange", "Apple", "Pinnaple"],
+                    datasets: [
+                        {
+                            label: "Available Fruits",
+                            data: [13, 33, 55, 67],
+                            backgroundColor: ['#239B56',
+                                '#239B56',
+                                '#239B56',
+                                '#239B56'
+                            ]
+                        },
+                        {
+                            label: "Sold Fruits",
+                            data: [3, 10, 40, 67],
+                            backgroundColor: ['#58D68D',
+                                '#58D68D',
+                                '#58D68D',
+                                '#58D68D'
+                            ]
+                        }
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Healthiest Fruits",
+                    },
+                    legend: {
+                        position: "right"
+                    }
+
+                }
             });
 
 
