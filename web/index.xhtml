@@ -18,10 +18,11 @@
                 type: "bar",
                 data: {
                     labels: ["VMAX-3", "Isilon", "Unity", "XtremIO"],
+
                     datasets: [
                         {
-                            label: "Total(TBs)",
-                            data: [parseFloat(242210.9/1024).toFixed(2), 476, 94.5, 7.59],
+                            label: "Total(TB\'s)",
+                            data: [parseFloat(#{controller.total} / 1024).toFixed(2), 476, 94.5, 7.59],
                             backgroundColor: ['#239B56',
                                 '#239B56',
                                 '#239B56',
@@ -29,8 +30,8 @@
                             ]
                         },
                         {
-                            label: "Free(TBs)",
-                            data: [parseFloat(160382.3/1024).toFixed(2), 476 - 83.7, 38.4, 6.5],
+                            label: "Free(TB\'s)",
+                            data: [parseFloat(160382.3 / 1024).toFixed(2), 476 - 83.7, 38.4, 6.5],
                             backgroundColor: ['#58D68D',
                                 '#58D68D',
                                 '#58D68D',
@@ -51,16 +52,30 @@
                         yAxes: [{
                                 ticks: {
                                     beginAtZero: true
-                                }
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Capacity (TB\'s)',
+                                    fontSize: 25
+                                },
+                                //stacked: true
+
+                            }],
+                        xAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Storage',
+                                    fontSize: 25,
+                                },
+                                //stacked: true
                             }]
                     }
 
 
                 }
             });
-
-
         </script>
+
     </h:body>
 </html>
 
