@@ -17,12 +17,13 @@
             var chartdata = new Chart(mychart, {
                 type: "bar",
                 data: {
-                    labels: ["VMAX-3", "Isilon", "Unity", "XtremIO"],
+                    labels: ["#{controller.vmax.name}", "#{controller.isilon.name}",
+                        "#{controller.unity.name}", "#{controller.xtremeIO.name}"],
 
                     datasets: [
                         {
                             label: "Total(TB\'s)",
-                            data: [parseFloat(#{controller.total} / 1024).toFixed(2), 476, 94.5, 7.59],
+                            data: [parseFloat(244333 / 1024).toFixed(2), 476, 94.5, 7.59],
                             backgroundColor: ['#239B56',
                                 '#239B56',
                                 '#239B56',

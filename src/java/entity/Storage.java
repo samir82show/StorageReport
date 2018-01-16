@@ -1,18 +1,17 @@
 package entity;
 
 public class Storage {
-    
-    private String name;
-    private float Total;
-    private float Free;
 
-    public Storage(String name, float Total, float Free) {
-        this.name = name;
-        this.Total = Total;
-        this.Free = Free;
-    }
+    private String name;
+    private float total, free;
 
     public Storage() {
+    }
+
+    public Storage(String name, float total, float free) {
+        this.name = name;
+        this.total = total;
+        this.free = free;
     }
 
     public String getName() {
@@ -24,26 +23,26 @@ public class Storage {
     }
 
     public float getTotal() {
-        return Total;
+        return total;
     }
 
-    public void setTotal(float Total) {
-        this.Total = Total;
+    public void setTotal(float total) {
+        this.total = total;
     }
 
     public float getFree() {
-        return Free;
+        return free;
     }
 
-    public void setFree(float Free) {
-        this.Free = Free;
+    public void setFree(float free) {
+        this.free = free;
     }
 
     @Override
     public String toString() {
-        return "Storage{" + "name=" + name + ", Total=" + Total + ", Free=" + Free + '}';
+        return "Storage{" + "name=" + name + ", total=" + total + ", free=" + free + '}';
     }
+
     
-        
     
 }

@@ -1,6 +1,9 @@
 package controller;
 
+import entity.Storage;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -9,38 +12,39 @@ import javax.inject.Named;
 @SessionScoped
 public class Controller implements Serializable {
 
-    private float total, val2014_2, val2014_3;
+    private Storage storage;
 
     @PostConstruct
     public void init() {
-        total = 242210.9f;
-        val2014_2 = 400;
-        val2014_3 = 750;
+        storage = new Storage();
     }
 
-    public float getTotal() {
-        return total;
+    public Storage getVmax() {
+        storage.setName("VMAX-3");
+        storage.setTotal(245455);
+        storage.setFree(144555);
+        return storage;
     }
 
-    public void setTotal(float total) {
-        this.total = total;
+    public Storage getIsilon() {
+        storage.setName("Isilon");
+        storage.setTotal(245455);
+        storage.setFree(144555);
+        return storage;
     }
 
-    public float getVal2014_2() {
-        return val2014_2;
+    public Storage getUnity() {
+        storage.setName("Unity");
+        storage.setTotal(245455);
+        storage.setFree(144555);
+        return storage;
     }
 
-    public void setVal2014_2(float val2014_2) {
-        this.val2014_2 = val2014_2;
+    public Storage getXtremeIO() {
+        storage.setName("XtremeIO");
+        storage.setTotal(245455);
+        storage.setFree(144555);
+        return storage;
     }
 
-    public float getVal2014_3() {
-        return val2014_3;
-    }
-
-    public void setVal2014_3(float val2014_3) {
-        this.val2014_3 = val2014_3;
-    }
-
-    
 }
