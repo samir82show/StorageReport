@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>My first line bar chart</title>
+        <h:outputScript library="js" name="Chart.js"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <link rel="shortcut icon" href=""/>
+    </h:head>
+    <h:body>
+        <div class="container">
+<<<<<<< HEAD
+            <canvas id="capacity"/>
+        </div>
+        <div class="container">
+            <canvas id="backup"/>
+=======
+            <canvas id="capacities"/>
+        </div>
+        <div class="container">
+            <canvas id="backup"/>
+        </div>
+        <div class="container">
+            <canvas id="mychart"/>
+        </div>
+        <div class="container">
+            <canvas id="mychart"/>
+        </div>
+        <div class="container">
+            <canvas id="mychart"/>
+        </div>
+        <div class="container">
+            <canvas id="mychart"/>
+>>>>>>> bran
+        </div>
+        <script>
+            var after;
+            var item = document.getElementById("mychart");
+            var chartdata = new Chart(mychart, {
+                type: "bar",
+                data: {
+                    labels: ["#{controller.vmax.name}", "#{controller.isilon.name}",
+                        "#{controller.unity.name}", "#{controller.xtremeIO.name}"],
+
+                    datasets: [
+                        {
+                            label: "Total (TB\'s)",
+                            data: [parseFloat(#{controller.vmax.total} / 1024).toFixed(2), 476, 94.5, 7.59],
+                            backgroundColor: ['#239B56',
+                                '#239B56',
+                                '#239B56',
+                                '#239B56'
+                            ]
+                        },
+                        {
+                            label: "Used (TB\'s)",
+                            data: [parseFloat(#{controller.vmax.free} / 1024).toFixed(2), 476 - 83.7, 38.4, 6.5],
+                            backgroundColor: ['#58D68D',
+                                '#58D68D',
+                                '#58D68D',
+                                '#58D68D'
+                            ]
+                        }
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: "Storage Utilization Report"
+                    },
+                    legend: {
+                        position: "right"
+                    },
+                    scales: {
+                        yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Capacity (TB\'s)',
+                                    fontSize: 25
+                                },
+//                                stacked: true
+
+                            }],
+                        xAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Storage',
+                                    fontSize: 25,
+                                },
+//                                stacked: true
+                            }]
+                    }
+
+
+                }
+            });
+        </script>
+
+    </h:body>
+</html>
+
