@@ -1,4 +1,35 @@
-.container {
-    width: 800px;
+#container1 {
+    width: 600px;
     height: 600px;
+    float: right;
+}
+
+#container2 {
+    width: 600px;
+    height: 600px;
+    float: right;
+}
+
+#container3 {
+    width: 600px;
+    height: 600px;
+    float: right;
+}
+
+#container4 {
+    width: 600px;
+    height: 600px;
+    float: right;
+}
+
+#container5 {
+    width: 600px;
+    height: 600px;
+    float: right;
+}
+
+#cap_table{
+    width: 600px;
+    height: 600px;
+    float: right;
 }

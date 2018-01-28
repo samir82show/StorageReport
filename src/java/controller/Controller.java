@@ -2,8 +2,6 @@ package controller;
 
 import entity.Storage;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;

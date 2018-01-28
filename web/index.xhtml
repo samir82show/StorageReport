@@ -4,81 +4,16 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>My first line bar chart</title>
-        <h:outputScript library="js" name="Chart.js"/>
+        <h:outputScript library="js" name="d3.js"/>
         <h:outputStylesheet library="css" name="style.css"/>
         <link rel="shortcut icon" href=""/>
     </h:head>
     <h:body>
-        <div class="container">
-            <canvas id="capacity"/>
-        </div>
-        <div class="container">
-            <canvas id="backup"/>
-        </div>
+        <svg height="300px" width="400px" style="background: orange">
+
+        </svg>
+
         <script>
-            var after;
-            var item = document.getElementById("mychart");
-            var chartdata = new Chart(mychart, {
-                type: "bar",
-                data: {
-                    labels: ["#{controller.vmax.name}", "#{controller.isilon.name}",
-                        "#{controller.unity.name}", "#{controller.xtremeIO.name}"],
-
-                    datasets: [
-                        {
-                            label: "Total(TB\'s)",
-                            data: [parseFloat(244333 / 1024).toFixed(2), 476, 94.5, 7.59],
-                            backgroundColor: ['#239B56',
-                                '#239B56',
-                                '#239B56',
-                                '#239B56'
-                            ]
-                        },
-                        {
-                            label: "Free(TB\'s)",
-                            data: [parseFloat(160382.3 / 1024).toFixed(2), 476 - 83.7, 38.4, 6.5],
-                            backgroundColor: ['#58D68D',
-                                '#58D68D',
-                                '#58D68D',
-                                '#58D68D'
-                            ]
-                        }
-                    ]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: "Storage Utilization Report"
-                    },
-                    legend: {
-                        position: "right"
-                    },
-                    scales: {
-                        yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                },
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Capacity (TB\'s)',
-                                    fontSize: 25
-                                },
-                                //stacked: true
-
-                            }],
-                        xAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Storage',
-                                    fontSize: 25,
-                                },
-                                //stacked: true
-                            }]
-                    }
-
-
-                }
-            });
         </script>
 
     </h:body>
