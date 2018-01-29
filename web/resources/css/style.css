@@ -1,35 +1,14 @@
-#container1 {
-    width: 600px;
-    height: 600px;
-    float: right;
-}
-
-#container2 {
-    width: 600px;
-    height: 600px;
-    float: right;
-}
-
-#container3 {
-    width: 600px;
-    height: 600px;
-    float: right;
-}
-
-#container4 {
-    width: 600px;
-    height: 600px;
-    float: right;
-}
-
-#container5 {
-    width: 600px;
-    height: 600px;
-    float: right;
-}
-
-#cap_table{
-    width: 600px;
-    height: 600px;
-    float: right;
-}
+/*#chart {
+    width: 800px;
+    height: 400px;
+    background-color: #f7f7f7;
+    margin: 25px;
+}*/
+/*
+.bar {
+    display: inline-block;
+    width: 25px;
+    height: 300px;
+    background-color: #7ED26D;
+    margin-right: 15px;
+}*/
