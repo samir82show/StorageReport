@@ -9,52 +9,66 @@
         <link rel="shortcut icon" href=""/>
     </h:head>
     <h:body>
+
         <div id="chart">
         </div>
+
         <script>
-            var data = [];
+            var data = [[29, 196],
+                [219, 281],
+                [450, 180],
+                [611, 399],
+                [788, 22],
+                [343, 174],
+                [368, 21],
+                [75, 14]];
+
+//            var data = [[400, 200],
+//                [210, 140],
+//                [722, 300],
+//                [70, 160],
+//                [250, 50],
+//                [110, 280],
+//                [699, 225],
+//                [90, 220]];
+
             var chart_width = 800;
             var chart_height = 400;
-            for (var i = 0; i &lt; 10; i++)
-                    data.push(Math.floor(Math.random() * 50));
 
             var svg = d3.select("#chart")
                     .append("svg")
-                    .attr("height", chart_height)
-                    .attr("width", chart_width);
-
-            svg.selectAll("rect")
+                    .attr("width", chart_width)
+                    .attr("height", chart_height);
+            //create SVG
+            svg.selectAll("circle")
                     .data(data)
                     .enter()
-                    .append("rect")
-                    .attr("x", function (d, i) {
-                        return i * chart_width / data.length;
+                    .append("circle")
+                    .attr("cx", function (d) {
+                        return d[0];
                     })
-                    .attr("y", function (d) {
-                        return chart_height - d * 5;
-                        ;
+                    .attr("cy", function (d) {
+                        return d[1];
                     })
-                    .attr("width", 25)
-                    .attr("height", function (d) {
-                        return d * 5;
+                    .attr("r", function (d) {
+                        return d[1] / 10;
                     })
-                    .style("fill", "#075007");
+                    .attr("fill", "#d1ab0e");
 
+            //create label
             svg.selectAll("text")
                     .data(data)
                     .enter()
                     .append("text")
                     .text(function (d) {
-                        return d;
+                        return d.join(",");
                     })
-                    .attr("x", function (d, i) {
-                        return i * chart_width / data.length + 4;
+                    .attr("x", function (d) {
+                        return d[0];
                     })
                     .attr("y", function (d) {
-                        return chart_height - d * 5 + 12;
-                        ;
-                    })
-                    .attr("fill", "white");
+                        return d[1];
+                    });
             console.log(data);
         </script>
     </h:body>
